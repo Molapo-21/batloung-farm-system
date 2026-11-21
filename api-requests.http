@@ -1,0 +1,47 @@
+### Handy requests (VS Code REST Client / IntelliJ HTTP client)
+@base = http://localhost:3000/api
+# 1) run the login request below, 2) paste the token here
+@token = PASTE_TOKEN_HERE
+
+### Login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "username": "admin", "password": "ChangeMe123!" }
+
+GET {{base}}/health
+
+### Sale that must be REJECTED (more large apples than stock)
+POST {{base}}/sales
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "vendor_id": 1, "payment_method": "CREDIT",
+  "items": [ {"fruit_id": 1, "packaging_size": "LARGE", "quantity": 10} ] }
+
+### Valid sale
+POST {{base}}/sales
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "vendor_id": 2, "payment_method": "CASH", "amount_paid": 300,
+  "items": [ {"fruit_id": 5, "packaging_size": "MEDIUM", "quantity": 2} ] }
+
+### Low stock / stock per size
+GET {{base}}/stock/low?threshold=10
+Authorization: Bearer {{token}}
+GET {{base}}/fruits/1/stock
+
+### Vendor search
+GET {{base}}/vendors/search?q=Mpho
+Authorization: Bearer {{token}}
+
+### Reports
+GET {{base}}/reports/top-fruits
+Authorization: Bearer {{token}}
+GET {{base}}/reports/revenue?from=2026-10-01&to=2026-10-31
+GET {{base}}/reports/top-vendor
+Authorization: Bearer {{token}}
+GET {{base}}/reports/stock-levels
+GET {{base}}/reports/outstanding-balances
+Authorization: Bearer {{token}}

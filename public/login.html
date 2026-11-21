@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administrator Login | Batloung Farm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .login-shell { max-width: 1100px; min-height: 620px; display: grid; grid-template-columns: 1.1fr 1fr; }
+    .login-left { position: relative; z-index: 3; padding: 56px 64px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .login-left .logo { width: 96px; height: 96px; margin-bottom: 14px; }
+    .login-form { width: 100%; max-width: 340px; text-align: left; margin-top: 12px; }
+    .pw { position: relative; } .pw button { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: 0; background: none; cursor: pointer; font-family: var(--sans); font-size: 11px; font-weight: 600; color: var(--muted); padding: 8px 10px; }
+    .login-right { position: relative; background: var(--black); overflow: hidden; }
+    .login-right .bgimg { position: absolute; inset: -20px; background: url(img/hero.jpg) center/cover; filter: grayscale(1) blur(5px) brightness(.55); }
+    .login-right .photo { position: absolute; left: 14%; right: 14%; top: 12%; bottom: 12%; background: url(img/hero.jpg) center/cover; box-shadow: 0 20px 40px rgba(0,0,0,.6); }
+    .demo { margin-top: 22px; background: #fff; border-left: 5px solid var(--yellow); padding: 14px 18px; text-align: left; box-shadow: 0 3px 10px rgba(0,0,0,.07); }
+    .demo b { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+    .demo code { font-family: ui-monospace, Menlo, Consolas, monospace; background: var(--gray); padding: 2px 7px; border-radius: 6px; font-size: 13px; }
+    .demo p { margin: 3px 0; font-size: 13px; }
+    .demo button { margin-top: 10px; border: 1px solid var(--ink); background: transparent; border-radius: 30px; padding: 6px 16px; font-family: var(--sans); font-size: 12px; font-weight: 600; cursor: pointer; }
+    .demo button:hover { background: var(--black); color: #fff; }
+    @media (max-width: 800px) { .login-shell { grid-template-columns: 1fr; } .login-right { display: none; } .login-left { padding: 40px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="page"><div class="shell login-shell">
+    <div class="login-left">
+      <img class="logo" src="img/logo.png" alt="">
+      <h1 class="display" style="font-size:46px;margin:0 0 6px">Batloung Farm</h1>
+      <p class="kicker">Administrator login</p>
+      <div class="login-form">
+        <div id="err"></div>
+        <div class="field"><label for="u">Username</label><input id="u" autocomplete="username" autofocus></div>
+        <div class="field"><label for="p">Password</label><div class="pw"><input id="p" type="password" autocomplete="current-password"><button type="button" id="showPw">Show</button></div></div>
+        <div style="text-align:center"><button class="pill" id="go" style="margin-top:8px">Log in</button></div>
+        <div class="demo">
+          <b>Demo login</b>
+          <p>Username: <code>Admin</code></p>
+          <p>Password: <code>12345678</code></p>
+          <button type="button" id="fillDemo">Fill in demo login</button>
+        </div>
+      </div>
+    </div>
+    <div class="login-right"><div class="bgimg"></div><div class="photo"></div></div>
+  </div></div>
+  <script src="js/login.js"></script>
+</body>
+</html>

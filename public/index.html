@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batloung Farm | Fruit Distribution Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <nav class="main-nav" id="nav">
+          <a href="#dashboard">Home</a>
+          <a href="#suppliers">Suppliers</a>
+          <a href="#fruits">Fruits &amp; Stock</a>
+          <a href="#vendors">Vendors</a>
+          <a href="#purchases">Purchases</a>
+          <a href="#sales">Sales</a>
+          <a href="#reports">Reports</a>
+        </nav>
+        <div class="search-pill">
+          <input id="gsearch" placeholder="Search vendor" aria-label="Search vendors by name or phone">
+          <svg id="gsearchBtn" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>
+        </div>
+        <div class="userchip"><span class="dot" id="dbDot"></span><span id="dbText">Checking…</span><button class="pill small" id="logout">Log out</button></div>
+      </header>
+      <main class="content"><div id="view" class="full"></div></main>
+    </div>
+  </div>
+  <div id="toasts"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
